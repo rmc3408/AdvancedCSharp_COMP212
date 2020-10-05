@@ -1,0 +1,5 @@
+C:\Users\molin\OneDrive\Documents\Programming03\Lab01\lab1\Problem2\obj\Debug\Problem2.csprojAssemblyReference.cache
+C:\Users\molin\OneDrive\Documents\Programming03\Lab01\lab1\Problem2\obj\Debug\MainWindow.g.cs
+C:\Users\molin\OneDrive\Documents\Programming03\Lab01\lab1\Problem2\obj\Debug\App.g.cs
+C:\Users\molin\OneDrive\Documents\Programming03\Lab01\lab1\Problem2\obj\Debug\Problem2_MarkupCompile.cache
+C:\Users\molin\OneDrive\Documents\Programming03\Lab01\lab1\Problem2\obj\Debug\Problem2_MarkupCompile.lref

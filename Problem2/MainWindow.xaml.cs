@@ -48,6 +48,7 @@ namespace Problem2
         ////////////////////////////////////////////////////////////////
         //WRITE YOUR CODE BELOW
 
+        public delegate string MyFunc1(string arg);
 
         ////////////////////////////////////////////////////////////////
         //A custom delegate class MyFunc2 has been used. 
@@ -55,6 +56,7 @@ namespace Problem2
         ////////////////////////////////////////////////////////////////
         //WRITE YOUR CODE BELOW
 
+        public delegate int MyFunc2(string arg);
 
         //handler method for click on left button
         private void leftButton_onClick(object sender, RoutedEventArgs e)
@@ -66,7 +68,7 @@ namespace Problem2
             ///////////////////////////////////////////////////////////////////
             //WRITE YOUR CODE BELOW
 
-
+            aDel = c.getUpperCase;
 
             //The argument to be passed to the wrapped method is
             //saved in variable theWord.
@@ -80,12 +82,12 @@ namespace Problem2
             //////////////////////////////////////////////////////////////
             //WRITE YOUR CODE BELOW
 
-
+            sUpper = aDel.Invoke(theWord);
 
 
             //Write the value in sUpper to textBlock
             //WRITE YOUR CODE BELOW
-
+            textblock1.Text = sUpper;
         }
 
         //handler method for click on right button
@@ -98,7 +100,7 @@ namespace Problem2
             ////////////////////////////////////////////////////////////////
             //WRITE YOUR CODE BELOW
 
-
+            bDel = c.getLength;
             //The argument to be passed to the wrapped method is
             //saved in variable theWord.
             string theWord = textbox1.Text;
@@ -110,11 +112,11 @@ namespace Problem2
             ///////////////////////////////////////////////////////////////
             //WRITE YOUR CODE BELOW
 
-
+            sLength = bDel.Invoke(theWord);
 
             ///Write the value in sLength to textBlock
             //WRITE YOUR CODE BELOW
-
+            textblock1.Text = sLength.ToString();
         }
     }
 

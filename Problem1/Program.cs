@@ -35,8 +35,7 @@ namespace Problem1
             ///from Func group.
             /////////////////////////////////////////////////////////////////////////
             //WRITE YOUR CODE BELOW
-            
-
+            Func<string, string> aDel;
 
             /////////////////////////////////////////////////////////////////////////
             ///Provide declaration for variable bDel using a built-in delegate class 
@@ -44,7 +43,7 @@ namespace Problem1
             /////////////////////////////////////////////////////////////////////////
             //WRITE YOUR CODE BELOW
 
-
+            Func<string, int> bDel;
 
             //////////////////////////////
             Console.Write("Enter word: ");
@@ -73,7 +72,7 @@ namespace Problem1
                         //////////////////////////////////////////////////////////////
                         //WRITE YOUR CODE BELOW
 
-
+                        sUpper = aDel(s);
 
 
                         //Write the value in sUpper to console
@@ -97,7 +96,7 @@ namespace Problem1
                         //WRITE YOUR CODE BELOW
 
 
-
+                        sLength = bDel(s);
 
                         //Write the value in sLength to console
                         Console.WriteLine("Length: " + sLength);

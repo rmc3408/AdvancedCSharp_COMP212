@@ -63,9 +63,8 @@ namespace Problem1
                         //The argument to be passed to the wrapped method is
                         //saved in variable theWord.
                         string theWord = s;
-
-
                         string sUpper;
+
                         //////////////////////////////////////////////////////////////
                         //Call the method wrapped in aDel (USE Invoke method).
                         //Save the returned value from the call in variable sUpper.

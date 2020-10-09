@@ -101,10 +101,11 @@ namespace Problem2
             //WRITE YOUR CODE BELOW
 
             bDel = c.getLength;
+
             //The argument to be passed to the wrapped method is
             //saved in variable theWord.
-            string theWord = textbox1.Text;
 
+            string theWord = textbox1.Text;
             int sLength;
             //////////////////////////////////////////////////////////////
             //Call the method wrapped in bDel (DO NOT USE Invoke method).

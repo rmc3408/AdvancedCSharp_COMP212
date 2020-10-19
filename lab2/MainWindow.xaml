@@ -1,0 +1,28 @@
+﻿<Window x:Class="Bill_Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bill_Calculator"
+        mc:Ignorable="d"
+        Title="Bill Calculator" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="Flower" HorizontalAlignment="Left" Margin="51,25,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" DropDownClosed="Beverage_DropDownClosed"/>
+        <ComboBox x:Name="Appetizer" HorizontalAlignment="Left" Margin="233,25,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0" DropDownClosed="Appetizer_DropDownClosed"/>
+        <DataGrid x:Name="Order" HorizontalAlignment="Left" Height="208" Margin="135,70,0,0" VerticalAlignment="Top" Width="547">
+            <!--<DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Category" Binding="{Binding category}" />
+                <DataGridTextColumn Header="Price" Binding="{Binding price}" />
+                <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" />
+            </DataGrid.Columns>-->
+        </DataGrid>
+        <Label Content="Sub Total:" HorizontalAlignment="Left" Margin="554,301,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="SubTotal" Content="0.00" HorizontalAlignment="Left" Margin="620,301,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.117,-0.189"/>
+        <Label Content="Tax:" HorizontalAlignment="Left" Margin="554,327,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Tax" Content="0.00" HorizontalAlignment="Left" Margin="620,327,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.117,-0.189"/>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="554,353,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="Total" Content="0.00" HorizontalAlignment="Left" Margin="620,353,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.117,-0.189"/>
+        <Button Content="Clear Bill" HorizontalAlignment="Left" Margin="71,314,0,0" VerticalAlignment="Top" Width="203" Height="51" RenderTransformOrigin="0.34,0.236" Click="Button_Click"/>
+    </Grid>
+</Window>

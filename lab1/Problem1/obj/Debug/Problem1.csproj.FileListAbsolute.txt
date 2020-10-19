@@ -1,0 +1,7 @@
+C:\Users\Dioums\source\repos\AdvancedCSharp_COMP212\Problem1\bin\Debug\Problem1.exe.config
+C:\Users\Dioums\source\repos\AdvancedCSharp_COMP212\Problem1\bin\Debug\Problem1.exe
+C:\Users\Dioums\source\repos\AdvancedCSharp_COMP212\Problem1\bin\Debug\Problem1.pdb
+C:\Users\Dioums\source\repos\AdvancedCSharp_COMP212\Problem1\obj\Debug\Problem1.csprojAssemblyReference.cache
+C:\Users\Dioums\source\repos\AdvancedCSharp_COMP212\Problem1\obj\Debug\Problem1.csproj.CoreCompileInputs.cache
+C:\Users\Dioums\source\repos\AdvancedCSharp_COMP212\Problem1\obj\Debug\Problem1.exe
+C:\Users\Dioums\source\repos\AdvancedCSharp_COMP212\Problem1\obj\Debug\Problem1.pdb

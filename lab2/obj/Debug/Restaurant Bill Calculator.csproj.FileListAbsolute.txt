@@ -1,0 +1,45 @@
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csprojAssemblyReference.cache
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\MainWindow.g.cs
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\App.g.cs
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator_MarkupCompile.cache
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator_MarkupCompile.lref
+D:\User\source\repos\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.exe.config
+D:\User\source\repos\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.exe
+D:\User\source\repos\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.pdb
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\MainWindow.baml
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.g.resources
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant_Bill_Calculator.Properties.Resources.resources
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csproj.GenerateResource.cache
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csproj.CoreCompileInputs.cache
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.exe
+D:\User\source\repos\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.pdb
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.exe.config
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.exe
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.pdb
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csprojAssemblyReference.cache
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\MainWindow.g.cs
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\App.g.cs
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator_MarkupCompile.cache
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator_MarkupCompile.lref
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\MainWindow.baml
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.g.resources
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant_Bill_Calculator.Properties.Resources.resources
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csproj.GenerateResource.cache
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csproj.CoreCompileInputs.cache
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.exe
+C:\Users\Windows\Downloads\WeiyangC_300728876_a4\Restaurant+Bill+Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.pdb
+D:\a2\Bill Calculator\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.exe.config
+D:\a2\Bill Calculator\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.exe
+D:\a2\Bill Calculator\Restaurant Bill Calculator\bin\Debug\Restaurant Bill Calculator.pdb
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csprojAssemblyReference.cache
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\MainWindow.g.cs
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\App.g.cs
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator_MarkupCompile.cache
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator_MarkupCompile.lref
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\MainWindow.baml
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.g.resources
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant_Bill_Calculator.Properties.Resources.resources
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csproj.GenerateResource.cache
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.csproj.CoreCompileInputs.cache
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.exe
+D:\a2\Bill Calculator\Restaurant Bill Calculator\obj\Debug\Restaurant Bill Calculator.pdb

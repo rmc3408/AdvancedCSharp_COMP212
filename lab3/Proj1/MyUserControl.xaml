@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Proj1.MyUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Proj1"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="740">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0"
+                   Name="textblock1"
+                   Text="Flower:"
+                   TextWrapping="Wrap"
+                   Foreground="Black"
+                   FontWeight="Medium"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Center"/>
+        
+        <TextBox Grid.Row="0" 
+                 Grid.Column="1" 
+                 Name="textbox1"
+                 Text="{Binding Path=MyFlower, 
+                    RelativeSource={RelativeSource AncestorType=local:MyUserControl}, 
+                    Mode=TwoWay, 
+                    UpdateSourceTrigger=PropertyChanged}"
+                 Foreground="Black" 
+                 FontWeight="Bold" 
+                 TextAlignment="Center" 
+                 VerticalAlignment="Center" 
+                 HorizontalAlignment="Stretch"/>
+        
+        <TextBlock Grid.Row="1" 
+                   Grid.Column="0" 
+                   Name="textblock2" 
+                   Text="Flower (repeat here):"
+                   TextWrapping="Wrap" 
+                   Foreground="Black"
+                   FontWeight="Medium"
+                   TextAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Center"/>
+        
+        <TextBlock Grid.Row="1" Grid.Column="1" 
+                 Name="textbox2"
+                 Text="{Binding Path=MyFlower, 
+                    RelativeSource={RelativeSource AncestorType=local:MyUserControl}, 
+                    Mode=OneWay}"
+                 Foreground="Black" 
+				 FontWeight="Bold"  
+				 TextAlignment="Center" 
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Stretch"/>
+    </Grid>
+</UserControl>

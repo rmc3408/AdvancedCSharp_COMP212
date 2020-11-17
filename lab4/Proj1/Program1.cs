@@ -22,18 +22,18 @@ namespace Proj1
 
         public static int search<T>(List<T> _myItems, T _searchItem) where T : IComparable<T>
         {
-            
+
             _myPosition = -1;
 
             foreach (T _myElement in _myItems)
             {
                 if (_myElement.CompareTo(_searchItem) == 0)
                 {
-                    _myPosition = _myItems.IndexOf(_searchItem);
+                    _myPosition = _myItems.IndexOf(_myElement);
                     return _myPosition;
-                    
+
                 }
-                
+
             }
             return _myPosition;
         }

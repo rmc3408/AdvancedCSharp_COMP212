@@ -54,7 +54,7 @@
                     IsEditable="True"
                     IsReadOnly="True"
                     Text="Pick a fruit"
-                    SelectionChanged="call_ComboBox_greenVegPicked">
+                    SelectionChanged="call_ComboBox_fruitPicked">
             </ComboBox>
             <Label Grid.Row="2" Content="Planet"></Label>
             <ComboBox Grid.Row="3"  
@@ -62,7 +62,7 @@
                     IsEditable="True"
                     IsReadOnly="True"
                     Text="Pick a planet"
-                    SelectionChanged="call_ComboBox_greenVegPicked">
+                    SelectionChanged="call_ComboBox_planetPicked">
             </ComboBox>
         </Grid>
 

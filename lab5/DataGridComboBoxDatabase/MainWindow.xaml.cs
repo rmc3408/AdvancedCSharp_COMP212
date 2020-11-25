@@ -8,16 +8,16 @@ using System.Collections.ObjectModel;
 namespace DataGridComboBoxDatabase
 {
     
-    public class Vegetable
+    public class Element
     {
-        
-        public int VegetableId { get; set; }
+        public int elementID { get; set; }
         public string Name  { get; set; }
-        public string Price { get; set; }
+        public string Color { get; set; }
+        
 
         public override string ToString()
         {
-            return Name + " " + Price;
+            return Name + " " + Color;
         }
     }
    
@@ -26,9 +26,14 @@ namespace DataGridComboBoxDatabase
     public partial class MainWindow : Window
     {
         
-        ObservableCollection<Vegetable> greenVeggieDG = new ObservableCollection<Vegetable>();
-                
-        List<Vegetable> greenVeggieCB = new List<Vegetable>();
+        ObservableCollection<Element> fruitDG = new ObservableCollection<Element>();
+        ObservableCollection<Element> planetDG = new ObservableCollection<Element>();
+
+        List<Element> fruitCB = new List<Element>();
+        List<Element> planetCB = new List<Element>();
+
+        //ObservableCollection<Element> mixDG = new ObservableCollection<Element>();
+
 
         public MainWindow()
         {
@@ -46,103 +51,114 @@ namespace DataGridComboBoxDatabase
 
         public void bindTargetControlsToDataSources()
         {
-            //bind the target dataGrid1 to the source greenVeggieDG
-            this.dataGrid1.ItemsSource = greenVeggieDG;
+            
+            this.dataGrid1.ItemsSource = fruitDG;
+            this.fruitComboBox.ItemsSource = fruitCB;
 
-            //bind the target comboBox to the source greenVeggieCB
-            this.greenComboBox.ItemsSource = greenVeggieCB;
+            this.dataGrid2.ItemsSource = planetDG;
+            this.planetComboBox.ItemsSource = planetCB;
         }
 
         public void loadExistingDataFromDatabase()
         {
             using (var context = new MyDbContext())
             {
-                //Ensure that the database for the context exists. 
-                //The database includes the DbSets (in this case the
-                //VegetableDbSet only). If the database does not exist 
-                //then the database and all its relation schema are created. 
-                //When database is created, its "by-convention" name 
-                //is the full name of the derived context class
-                //(i.e. namespace + class name).
-                //For example, in our case the name should be
-                //DataGridComboBoxDatabase.MyDbContext
-                //Initially, the database tables should be empty. 
-                //If the database already exists, no action is taken 
-                //and no effort is made to ensure if the database is 
-                //compatible with the data model for this context.
                 bool created = context.Database.CreateIfNotExists();
+                var fruitList = context.FruitDbSet.ToList();
+                var planetList = context.PlanetDbSet.ToList();
 
-                //Get the existing tuples from the VegetableDbSet table (of the 
-                //database) as a list of Vegetable objects (or empty list if no 
-                //tuple exists) 
-                var vegetableList = context.VegetableDbSet.ToList();
-
-                //populate collection greenVeggieDG using the list above
-                foreach (var i in vegetableList)
+                foreach (var i in fruitList)
                 {
-                    greenVeggieDG.Add(i);
+                    fruitDG.Add(i);
                 }
+
+                foreach (var i in planetList)
+                {
+                    planetDG.Add(i);
+                }
+
+                
             }
         }
 
         public void prepareComboBoxes()
         {
-            greenVeggieCB.Add(new Vegetable { Name = "Cilantro", Price = "5.11" });
-            greenVeggieCB.Add(new Vegetable { Name = "Spinach", Price = "10.22" });
-            greenVeggieCB.Add(new Vegetable { Name = "Cabbage", Price = "7.33" });
+            fruitCB.Add(new Element { Name = "kiwi", Color = "red" });
+            fruitCB.Add(new Element { Name = "grape", Color = "blue" });
+            fruitCB.Add(new Element { Name = "dates", Color = "red" });
+            fruitCB.Add(new Element { Name = "pear", Color = "blue" });
+            
+            planetCB.Add(new Element { Name = "Earth", Color = "red" });
+            planetCB.Add(new Element { Name = "Jupiter", Color = "blue" });
         }
 
 
-        public void call_ComboBox_greenVegPicked(object sender, SelectionChangedEventArgs e)
+        public void call_ComboBox_fruitPicked(object sender, SelectionChangedEventArgs e)
         {
-            //***** 1. add picked vegetable to database first *********
-            //get the item (Vegetable object) selected in greenComboBox
+            
             var item = (sender as ComboBox).SelectedItem;
             if (item == null) return;
 
-            Vegetable v = (Vegetable)item;
+            Element v = (Element)item;
 
-            //Item selected in the greenComboBox is a Vegetable object.
-            //Create a deep copy of that selected Vegetable object.
-            Vegetable theVegetable = new Vegetable();
-            theVegetable.Name = ((Vegetable)item).Name;
-            theVegetable.Price = ((Vegetable)item).Price;
+            Element theFruit = new Element();
+            theFruit.Name = ((Element)item).Name;
+            theFruit.Color = ((Element)item).Color;
 
             using (var context = new MyDbContext())
             {
-                //Write the above deep copied Vegetable object to the database
-                context.VegetableDbSet.Add(theVegetable);
+                
+                context.FruitDbSet.Add(theFruit);
+                context.SaveChanges();
+            }
+         
+            using (var context = new MyDbContext())
+            {
+                fruitDG.Clear();
 
-                //save changes made in the context to the database
+                var fruitList = context.FruitDbSet.ToList();
+                foreach (var i in fruitList)
+                {
+                    fruitDG.Add(i);
+                }
+            }
+                        
+            Func<string> del = () => { fruitComboBox.Text = "Pick a fruit"; return null;};
+            Dispatcher.BeginInvoke(del);
+        }
+        
+        // MUDAR ESSA merda pra PLANET.... FAZER IGUAL a FRUIT.
+        public void call_ComboBox_planetPicked(object sender, SelectionChangedEventArgs e)
+        {
+
+            var item = (sender as ComboBox).SelectedItem;
+            if (item == null) return;
+
+            Element v = (Element)item;
+
+            Element theFruit = new Element();
+            theFruit.Name = ((Element)item).Name;
+            theFruit.Color = ((Element)item).Color;
+
+            using (var context = new MyDbContext())
+            {
+
+                context.FruitDbSet.Add(theFruit);
                 context.SaveChanges();
             }
 
-            //***** 2. Next, refresh datagrid1 with vegetables from database *********
             using (var context = new MyDbContext())
             {
-                //empty the collection greenVeggieDG
-                //(this will automatically empty the relevant datagrid 
-                //as well)
-                greenVeggieDG.Clear();
+                fruitDG.Clear();
 
-
-                //get the list of Vegetable objects that are currently
-                //present as tuples in the VegetableDbSet table of the database
-                var vegetableList = context.VegetableDbSet.ToList();
-
-                //populate the emptied collection greenVeggieDG  
-                //using the current Vegetable objects obtained from database
-                foreach (var i in vegetableList)
+                var fruitList = context.FruitDbSet.ToList();
+                foreach (var i in fruitList)
                 {
-                    greenVeggieDG.Add(i);
+                    fruitDG.Add(i);
                 }
             }
 
-            //once a veggie is added to datagrid1, display back 
-            //the default text "Pick a green vegetable" in greenComboBox.
-            //This has to be done asynchronously using Dispatcher.BeginInvoke,
-            //Otherwise, "Pick a green vegetable" won't display back.
-            Func<string> del = () => {greenComboBox.Text = "Pick a green vegetable"; return null;};
+            Func<string> del = () => { fruitComboBox.Text = "Pick a fruit"; return null; };
             Dispatcher.BeginInvoke(del);
         }
 
@@ -156,8 +172,8 @@ namespace DataGridComboBoxDatabase
                 dataGrid2.ItemsSource = null;
 
                 
-                var query = from v in context.VegetableDbSet
-                            select new { VegetableName = v.Name, VegetablePrice = v.Price};
+                var query = from v in context.FruitDbSet
+                            select new { VegetableName = v.Name, VegetablePrice = v.Color};
                               
                 dataGrid2.ItemsSource = query.ToList();
             }

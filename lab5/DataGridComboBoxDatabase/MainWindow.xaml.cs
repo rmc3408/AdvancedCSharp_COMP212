@@ -61,24 +61,27 @@ namespace DataGridComboBoxDatabase
 
         public void loadExistingDataFromDatabase()
         {
-            using (var context = new MyDbContext())
+            using (var context = new FruitDbContext())
             {
                 bool created = context.Database.CreateIfNotExists();
                 var fruitList = context.FruitDbSet.ToList();
-                var planetList = context.PlanetDbSet.ToList();
-
+                
                 foreach (var i in fruitList)
                 {
                     fruitDG.Add(i);
                 }
+            }
+            using (var context = new PlanetDbContext())
+            {
+                bool created = context.Database.CreateIfNotExists();
+                var planetList = context.PlanetDbSet.ToList();
 
                 foreach (var i in planetList)
                 {
                     planetDG.Add(i);
                 }
-
-                
             }
+
         }
 
         public void prepareComboBoxes()
@@ -105,14 +108,14 @@ namespace DataGridComboBoxDatabase
             theFruit.Name = ((Element)item).Name;
             theFruit.Color = ((Element)item).Color;
 
-            using (var context = new MyDbContext())
+            using (var context = new FruitDbContext())
             {
                 
                 context.FruitDbSet.Add(theFruit);
                 context.SaveChanges();
             }
          
-            using (var context = new MyDbContext())
+            using (var context = new FruitDbContext())
             {
                 fruitDG.Clear();
 
@@ -127,7 +130,6 @@ namespace DataGridComboBoxDatabase
             Dispatcher.BeginInvoke(del);
         }
         
-        // MUDAR ESSA merda pra PLANET.... FAZER IGUAL a FRUIT.
         public void call_ComboBox_planetPicked(object sender, SelectionChangedEventArgs e)
         {
 
@@ -136,47 +138,99 @@ namespace DataGridComboBoxDatabase
 
             Element v = (Element)item;
 
-            Element theFruit = new Element();
-            theFruit.Name = ((Element)item).Name;
-            theFruit.Color = ((Element)item).Color;
+            Element thePlanet = new Element();
+            thePlanet.Name = ((Element)item).Name;
+            thePlanet.Color = ((Element)item).Color;
 
-            using (var context = new MyDbContext())
+            using (var context = new PlanetDbContext())
             {
 
-                context.FruitDbSet.Add(theFruit);
+                context.PlanetDbSet.Add(thePlanet);
                 context.SaveChanges();
             }
 
-            using (var context = new MyDbContext())
+            using (var context = new PlanetDbContext())
             {
-                fruitDG.Clear();
+                planetDG.Clear();
 
-                var fruitList = context.FruitDbSet.ToList();
-                foreach (var i in fruitList)
+                var planetList = context.PlanetDbSet.ToList();
+                foreach (var i in planetList)
                 {
-                    fruitDG.Add(i);
+                    planetDG.Add(i);
                 }
             }
 
-            Func<string> del = () => { fruitComboBox.Text = "Pick a fruit"; return null; };
+            Func<string> del = () => { planetComboBox.Text = "Pick a planet"; return null; };
             Dispatcher.BeginInvoke(del);
         }
 
-
-        //do projection in LINQ query syntax
-        public void call_LINQ_Project_QS_Button_Click(object sender, RoutedEventArgs e)
+        //Clear function
+        public void call_Clear(object sender, RoutedEventArgs e)
         {
-            using (var context = new MyDbContext())
+            
+            using (var context = new FruitDbContext())
+            {
+                var fruitList = context.FruitDbSet.ToList();
+                foreach (var i in fruitList)
+                {
+                    context.FruitDbSet.Remove(i);
+                }
+                fruitDG.Clear();
+                context.SaveChanges();
+            }
+            using (var context = new PlanetDbContext())
             {
                 
-                dataGrid2.ItemsSource = null;
+                var planetList = context.PlanetDbSet.ToList();
 
-                
-                var query = from v in context.FruitDbSet
-                            select new { VegetableName = v.Name, VegetablePrice = v.Color};
-                              
-                dataGrid2.ItemsSource = query.ToList();
+                foreach (var i in planetList)
+                {
+                    context.PlanetDbSet.Remove(i);
+                }
+                planetDG.Clear();
+                context.SaveChanges();
             }
+            dataGrid3.ItemsSource = null;
+        }
+
+        
+        public void call_LINQ_Project_QS_Button_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new FruitDbContext())
+            {
+                //dataGrid1.ItemsSource = null;
+                               
+                var query = from v in context.FruitDbSet
+                            select new { Name = v.Name};
+                              
+                dataGrid3.ItemsSource = query.ToList();
+            }
+        }
+        public void call_Selected(object sender, RoutedEventArgs e)
+        {
+            if(dataGrid1.SelectedItem != null)
+            {
+                Element selectedItem = (Element)dataGrid1.SelectedItem;
+                if (selectedItem == null) return;
+                fruitDG.Remove(selectedItem);
+            }
+            if (dataGrid2.SelectedItem != null)
+            {
+                Element selectedItem = (Element)dataGrid2.SelectedItem;
+                if (selectedItem == null) return;
+                planetDG.Remove(selectedItem);
+            }
+
+        }
+
+        private void call_Filter(object sender, RoutedEventArgs e)
+        {
+            using( var context = new FruitDbContext())
+            {
+               // var query = from v in context.FruitDbSet
+               //             select new { Color == "red" };
+            }
+            
         }
     }
 }

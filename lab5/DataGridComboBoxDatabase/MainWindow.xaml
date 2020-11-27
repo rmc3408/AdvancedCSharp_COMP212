@@ -23,6 +23,7 @@
         <DataGrid Grid.Row="0" Grid.Column="0" 
             Name="dataGrid1"   
             Background="#D3d3d3"
+            RowBackground="#D3d3d3"
             AutoGenerateColumns="True" 
             IsReadOnly="True">
         </DataGrid>
@@ -30,13 +31,14 @@
         <DataGrid Grid.Row="0" Grid.Column="1" 
             Name="dataGrid2" 
             Background="#e0ffff"
+            RowBackground="#e0ffff"
             AutoGenerateColumns="True" 
-            IsReadOnly="True">
-        </DataGrid>
+            IsReadOnly="True"/>
 
         <DataGrid Grid.Row="0" Grid.Column="2" 
             Name="dataGrid3"  
             Background="#e6e6fa"
+            RowBackground="#e6e6fa"
             AutoGenerateColumns="True" 
             IsReadOnly="True">
         </DataGrid>

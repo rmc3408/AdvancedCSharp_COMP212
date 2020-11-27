@@ -164,7 +164,7 @@ namespace DataGridComboBoxDatabase
             Dispatcher.BeginInvoke(del);
         }
 
-        //Clear function
+        
         public void call_Clear(object sender, RoutedEventArgs e)
         {
             
@@ -177,6 +177,7 @@ namespace DataGridComboBoxDatabase
                 }
                 fruitDG.Clear();
                 context.SaveChanges();
+                dataGrid1.ItemsSource = null;
             }
             using (var context = new PlanetDbContext())
             {
@@ -189,6 +190,7 @@ namespace DataGridComboBoxDatabase
                 }
                 planetDG.Clear();
                 context.SaveChanges();
+                dataGrid2.ItemsSource = null;
             }
             dataGrid3.ItemsSource = null;
         }
@@ -198,10 +200,10 @@ namespace DataGridComboBoxDatabase
         {
             using (var context = new FruitDbContext())
             {
-                //dataGrid1.ItemsSource = null;
+                dataGrid1.ItemsSource = null;
                                
-                var query = from v in context.FruitDbSet
-                            select new { Name = v.Name};
+                var query = from f in context.FruitDbSet
+                            select new { Name = f.Name};
                               
                 dataGrid3.ItemsSource = query.ToList();
             }
@@ -225,11 +227,13 @@ namespace DataGridComboBoxDatabase
 
         private void call_Filter(object sender, RoutedEventArgs e)
         {
+
             using( var context = new FruitDbContext())
             {
-               var query = from v in context.FruitDbSet
-                           where v.Color == "red"
-                           select new { Name = v.Name };
+               var query = from f in context.FruitDbSet
+                           where f.Color == "red"
+                           select new { Name = f.Name };
+               dataGrid3.ItemsSource = query.ToList();
             }
             
         }
@@ -237,8 +241,8 @@ namespace DataGridComboBoxDatabase
         {
             using (var context = new FruitDbContext())
             {
-                var query = from v in context.FruitDbSet
-                            select new { Name = v.Name };
+                var query = from f in context.FruitDbSet
+                            select new { Name = f.Name };
                 dataGrid3.ItemsSource = query.OrderBy(f => f.Name).ToList();
             }
 
@@ -247,8 +251,9 @@ namespace DataGridComboBoxDatabase
         {
             using (var context = new FruitDbContext())
             {
-                var query = from v in context.FruitDbSet
-                            select new { Name = v.Name };
+                var query = from f in context.FruitDbSet
+                            select new { Name = f.Name };
+                dataGrid3.ItemsSource = query.OrderBy(f => f.Name).ToList();
             }
 
         }

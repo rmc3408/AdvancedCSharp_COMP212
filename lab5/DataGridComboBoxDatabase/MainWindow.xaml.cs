@@ -227,10 +227,30 @@ namespace DataGridComboBoxDatabase
         {
             using( var context = new FruitDbContext())
             {
-               // var query = from v in context.FruitDbSet
-               //             select new { Color == "red" };
+               var query = from v in context.FruitDbSet
+                           where v.Color == "red"
+                           select new { Name = v.Name };
             }
             
+        }
+        private void call_OrderBy(object sender, RoutedEventArgs e)
+        {
+            using (var context = new FruitDbContext())
+            {
+                var query = from v in context.FruitDbSet
+                            select new { Name = v.Name };
+                dataGrid3.ItemsSource = query.OrderBy(f => f.Name).ToList();
+            }
+
+        }
+        private void call_InnerJoin(object sender, RoutedEventArgs e)
+        {
+            using (var context = new FruitDbContext())
+            {
+                var query = from v in context.FruitDbSet
+                            select new { Name = v.Name };
+            }
+
         }
     }
 }

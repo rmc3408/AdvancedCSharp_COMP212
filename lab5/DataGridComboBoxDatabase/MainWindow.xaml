@@ -118,31 +118,24 @@
             <Button x:Name="func" Grid.Row="1"
                 Margin="0 5 100 5"
                 Background="#8aadb8"
-                Content="LINQ Filter QS" Click="call_Filter"
-                    
-                >
+                Content="LINQ Filter QS" 
+                Click="call_Filter">
             </Button>
             
             <Button Grid.Row="2"
                 Margin="0 5 100 5"
                 Background="#8aadb8"
                 Content="LINQ Order Ascending QS" 
-                >
+                Click="call_OrderBy">
             </Button>
 
             <Button Grid.Row="3"
                 Margin="0 5 100 5"
                 Background="#8aadb8"
                 Content="LINQ Inner Join QS" 
-                >
+                Click="call_InnerJoin">
             </Button>
         </Grid>
-
-
-        <!--<Button Grid.Row="2" Grid.Column="2"
-                Content="LINQ Project QS" 
-                Click="call_LINQ_Project_QS_Button_Click">
-        </Button>-->
 
     </Grid>
 </Window>

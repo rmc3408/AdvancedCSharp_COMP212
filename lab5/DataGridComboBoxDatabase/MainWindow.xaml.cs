@@ -177,20 +177,18 @@ namespace DataGridComboBoxDatabase
                 }
                 fruitDG.Clear();
                 context.SaveChanges();
-                dataGrid1.ItemsSource = null;
+                
             }
             using (var context = new PlanetDbContext())
             {
-                
                 var planetList = context.PlanetDbSet.ToList();
-
                 foreach (var i in planetList)
                 {
                     context.PlanetDbSet.Remove(i);
                 }
                 planetDG.Clear();
                 context.SaveChanges();
-                dataGrid2.ItemsSource = null;
+                
             }
             dataGrid3.ItemsSource = null;
         }
@@ -202,7 +200,7 @@ namespace DataGridComboBoxDatabase
             {
                 dataGrid1.ItemsSource = null;
                                
-                var query = from f in context.FruitDbSet
+                var query = from f in fruitDG
                             select new { Name = f.Name};
                               
                 dataGrid3.ItemsSource = query.ToList();
@@ -210,18 +208,22 @@ namespace DataGridComboBoxDatabase
         }
         public void call_Selected(object sender, RoutedEventArgs e)
         {
-            if(dataGrid1.SelectedItem != null)
+            if (dataGrid1.SelectedItem != null)
             {
-                Element selectedItem = (Element)dataGrid1.SelectedItem;
-                if (selectedItem == null) return;
-                fruitDG.Remove(selectedItem);
+                    Element selectedItem = (Element)dataGrid1.SelectedItem;
+                    if (selectedItem == null) return;
+                    fruitDG.Remove(selectedItem);
+                    dataGrid1.ItemsSource = fruitDG;
             }
+        
             if (dataGrid2.SelectedItem != null)
             {
-                Element selectedItem = (Element)dataGrid2.SelectedItem;
-                if (selectedItem == null) return;
-                planetDG.Remove(selectedItem);
+                    Element selectedItem = (Element)dataGrid2.SelectedItem;
+                    if (selectedItem == null) return;
+                    planetDG.Remove(selectedItem);
+                    dataGrid2.ItemsSource = planetDG;
             }
+            
 
         }
 
@@ -253,7 +255,7 @@ namespace DataGridComboBoxDatabase
             {
                 var query = from f in context.FruitDbSet
                             select new { Name = f.Name };
-                dataGrid3.ItemsSource = query.OrderBy(f => f.Name).ToList();
+                dataGrid3.ItemsSource = query.ToList();
             }
 
         }
